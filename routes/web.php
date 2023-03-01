@@ -4,10 +4,13 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\PengalamanController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProgramController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,16 +25,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-   echo "Selamat Datang";
-});
-Route::get('/about', function(){
-   echo "2141720103", "Afifah Nofa";
-});
-Route::get('/articles/{id}', function($id){
-   echo "Halaman Artikel dengan ID ";
-});
-Route::get('/', [HomeController::class, 'index']);
+// Route::get('/', function () {
+//    echo "Selamat Datang";
+// });
+// Route::get('/about', function(){
+//    echo "2141720103", "Afifah Nofa";
+// });
+// Route::get('/articles/{id}', function($id){
+//    echo "Halaman Artikel dengan ID ";
+// });
+// Route::get('/', [HomeController::class, 'index']);
 Route::prefix('products')->group(function(){
    Route::get('/', [ProductController::class, 'index']);
    Route::get('/marbel-edu-games', function (){
@@ -60,6 +63,10 @@ Route::prefix('program')->group(function() {
 
 Route::get("/about-us", [AboutUsController::class, 'about']);
 Route::get("/contact-us", [ContactUsController::class, 'contact']);
+
+Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+Route::get('/pengalaman', [PengalamanController::class, 'index'])->name('pengalaman');
 
 
 
