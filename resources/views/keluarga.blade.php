@@ -39,16 +39,18 @@
           <table class="table">
             <tr>
                 <th>id</th>
-                <th>judul</th>
-                <th>penulis</th>
-                <th>tgl_publish</th>
+                <th>nama</th>
+                <th>ttl</th>
+                <th>status</th>
+                <th>agama</th>
             </tr>
-            @foreach ($art as $id => $k)
+            @foreach ($kg as $id => $f)
             <tr>
                 <td>{{$id}}</td>
-                <td>{{$k->judul}}</td>
-                <td>{{$k->penulis}}</td>
-                <td>{{$k->tgl_publish}}</td>
+                <td>{{$f->nama}}</td>
+                <td>{{$f->ttl}}</td>
+                <td>{{$f->status}}</td>
+                <td>{{$f->agama}}</td>
             </tr>
             @endforeach
           </table>

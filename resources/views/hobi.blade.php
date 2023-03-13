@@ -39,16 +39,14 @@
           <table class="table">
             <tr>
                 <th>id</th>
-                <th>judul</th>
-                <th>penulis</th>
-                <th>tgl_publish</th>
+                <th>nama</th>
+                <th>hobi</th>
             </tr>
-            @foreach ($art as $id => $k)
+            @foreach ($hb as $id => $h)
             <tr>
                 <td>{{$id}}</td>
-                <td>{{$k->judul}}</td>
-                <td>{{$k->penulis}}</td>
-                <td>{{$k->tgl_publish}}</td>
+                <td>{{$h->nama}}</td>
+                <td>{{$h->hobi}}</td>
             </tr>
             @endforeach
           </table>

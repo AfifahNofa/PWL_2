@@ -6,7 +6,10 @@ use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\ArtikelModelController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HobiModelController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\KeluargaModelController;
+use App\Http\Controllers\MataKuliahModelController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PengalamanController;
@@ -68,8 +71,13 @@ Route::get("/contact-us", [ContactUsController::class, 'contact']);
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 Route::get('/pengalaman', [PengalamanController::class, 'index'])->name('pengalaman');
+Route::get('/artikel', [ArtikelModelController::class, 'index'])->name('artikel');
+Route::get('/hobi', [HobiModelController::class, 'index'])->name('hobi');
+Route::get('/keluarga', [KeluargaModelController::class, 'index'])->name('keluarga');
+Route::get('/matkul', [MataKuliahModelController::class, 'index'])->name('matkul');
+
 //jobsheet 4
-Route::get('/artikel', [ArtikelModelController::class, 'index']);
+//Route::get('/artikel', [ArtikelModelController::class, 'index']);
 
 
 

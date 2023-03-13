@@ -55,6 +55,46 @@
           </p>
         </a>
       </li>
+
+       <li class="nav-item">
+        <a href={{route('artikel')}} class="nav-link">
+          <i class="nav-icon fas fa-tachometer-alt"></i>
+          <p>
+            Artikel
+            {{-- <i class="right fas fa-angle-left"></i> --}}
+          </p>
+        </a>
+      </li>
+
+       <li class="nav-item">
+        <a href={{route('hobi')}} class="nav-link">
+          <i class="nav-icon fas fa-tachometer-alt"></i>
+          <p>
+            Hobi
+            {{-- <i class="right fas fa-angle-left"></i> --}}
+          </p>
+        </a>
+      </li>
+
+       <li class="nav-item">
+        <a href={{route('keluarga')}} class="nav-link">
+          <i class="nav-icon fas fa-tachometer-alt"></i>
+          <p>
+            Keluarga
+            {{-- <i class="right fas fa-angle-left"></i> --}}
+          </p>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href={{route('matkul')}} class="nav-link">
+          <i class="nav-icon fas fa-tachometer-alt"></i>
+          <p>
+            MataKuliah
+            {{-- <i class="right fas fa-angle-left"></i> --}}
+          </p>
+        </a>
+      </li>
         
     </ul>
   </nav>

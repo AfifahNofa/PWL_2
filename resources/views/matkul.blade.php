@@ -38,17 +38,17 @@
         <div class="card-body">
           <table class="table">
             <tr>
-                <th>id</th>
-                <th>judul</th>
-                <th>penulis</th>
-                <th>tgl_publish</th>
+                <th>kode</th>
+                <th>nama</th>
+                <th>dosen</th>
+                <th>sks</th>
             </tr>
-            @foreach ($art as $id => $k)
+            @foreach ($mk as $kode => $m)
             <tr>
-                <td>{{$id}}</td>
-                <td>{{$k->judul}}</td>
-                <td>{{$k->penulis}}</td>
-                <td>{{$k->tgl_publish}}</td>
+                <td>{{$kode}}</td>
+                <td>{{$m->nama}}</td>
+                <td>{{$m->dosen}}</td>
+                <td>{{$m->sks}}</td>
             </tr>
             @endforeach
           </table>
