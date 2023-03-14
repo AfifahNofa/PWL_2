@@ -14,24 +14,20 @@ class HobiModelSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('hobi')->insert([
+        DB::table('hobi')->update([
             [
-                'id' => 'B01',
                 'nama' => 'Afifah',
                 'hobi' => 'Menggambar',
             ],
             [
-                'id' => 'B02',
                 'nama' => 'Nofa',
                 'hobi' => 'Bulu tangkis',
             ],
             [
-                'id' => 'B03',
                 'nama' => 'Kurnia',
                 'hobi' => 'Renang',
             ],
             [
-                'id' => 'B04',
                 'nama' => 'Rahmadani',
                 'hobi' => 'Makan',
             ]
