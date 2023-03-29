@@ -95,45 +95,6 @@ Route::get('/tes', function(){
     echo Hash::make('1').'<br>';
 });
 Route::middleware(['auth'])->group(function(){
-    Route::get('/', function () {
-        echo "Selamat Datang";
-     });
-     Route::get('/about', function(){
-        echo "2141720103", "Afifah Nofa";
-     });
-     Route::get('/articles/{id}', function($id){
-        echo "Halaman Artikel dengan ID ";
-     });
-     Route::get('/', [HomeController::class, 'index']);
-     Route::prefix('products')->group(function(){
-        Route::get('/', [ProductController::class, 'index']);
-        Route::get('/marbel-edu-games', function (){
-            return "Marbel Edu Games";
-         });
-        Route::get('/marbel-and-friends-kids-games', function (){
-            return "Marbel and Friends Kids Games";
-        });
-        Route::get('/riri-story-books', function (){
-            return "Riri Story Books";
-        });
-        Route::get('/kolak-kids-songs', function (){
-            return "Kolak Kids Songs";
-        });
-     });
-     
-     Route::get('/news', [NewsController::class, 'index']);
-     Route::get('/news/{news}', [NewsController::class, 'a']);
-     
-     Route::prefix('program')->group(function() {
-         Route::get('/', [ProgramController::class, 'index']);
-         Route::get('/karir', [ProgramController::class, 'kar']);
-         Route::get('/magang', [ProgramController::class, 'mag']);
-         Route::get('/kunjungan-industri', [ProgramController::class, 'kunjIndustri']);
-     });
-     
-     Route::get("/about-us", [AboutUsController::class, 'about']);
-     Route::get("/contact-us", [ContactUsController::class, 'contact']);
-     
      Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
      Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
      Route::get('/pengalaman', [PengalamanController::class, 'index'])->name('pengalaman');
