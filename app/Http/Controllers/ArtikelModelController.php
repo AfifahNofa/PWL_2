@@ -9,7 +9,6 @@ class ArtikelModelController extends Controller
 {
     public function index(){
         $data = ArtikelModel::all();
-        return view('artikel')
-                ->with('art', $data);
+        return view('artikel', [$data]);
     }
 }

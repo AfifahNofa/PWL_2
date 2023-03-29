@@ -43,7 +43,7 @@
                 <th>penulis</th>
                 <th>tgl_publish</th>
             </tr>
-            @foreach ($art as $id => $k)
+            @foreach ($id => $k)
             <tr>
                 <td>{{$id}}</td>
                 <td>{{$k->judul}}</td>
