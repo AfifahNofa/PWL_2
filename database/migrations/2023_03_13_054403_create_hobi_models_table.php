@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('hobi', function (Blueprint $table) {
-            $table->string('id', 3);
+        Schema::create('hobi', function (Blueprint $table) {
+            $table->string('id', 3)->primary();
             $table->string('nama', 30);
             $table->string('hobi', 30);
         });
