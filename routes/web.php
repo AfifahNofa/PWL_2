@@ -10,6 +10,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HobiModelController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KeluargaModelController;
+use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\MataKuliahModelController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PageController;
@@ -103,5 +104,7 @@ Route::middleware(['auth'])->group(function(){
      Route::get('/keluarga', [KeluargaModelController::class, 'index'])->name('keluarga');
      Route::get('/matkul', [MataKuliahModelController::class, 'index'])->name('matkul');
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
+
+    Route::resource('/mahasiswa', MahasiswaController::class);
 });
 
