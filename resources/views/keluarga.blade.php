@@ -36,6 +36,7 @@
           </div>
         </div>
         <div class="card-body">
+          <a href="{{url('keluarga/create')}}" class="btn btn-sm btn-success my-2">Tambah Data</a>
           <table class="table">
             <tr>
                 <th>id</th>
@@ -51,6 +52,16 @@
                 <td>{{$f->ttl}}</td>
                 <td>{{$f->status}}</td>
                 <td>{{$f->agama}}</td>
+                <td>
+                  <!-- Bikin tombol edit dan delete -->
+                  <a href="{{ url('/keluarga/'. $f->id.'/edit') }}" class="btn btn-sm btn-warning">edit</a>
+                  <form method="POST" action="{{ url('/keluarga/'.$m->id) }}" >
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-sm btn-danger">hapus</button>
+                  </form>
+
+                </td>
             </tr>
             @endforeach
           </table>

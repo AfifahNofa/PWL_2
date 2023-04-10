@@ -10,6 +10,12 @@ class KeluargaModel extends Model
     use HasFactory;
 
     protected $table = 'keluarga';
-    protected $primaryKey = 'id';
-    protected $keyType = 'string';
+    // protected $primaryKey = 'id';
+    // protected $keyType = 'string';
+    protected $fillable = [
+        'nama',
+        'ttl',
+        'status',
+        'agama',
+    ];
 }

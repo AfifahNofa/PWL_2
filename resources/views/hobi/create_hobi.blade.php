@@ -6,12 +6,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Mata Kuliah</h1>
+            <h1>Hobi</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Mata Kuliah</li>
+              <li class="breadcrumb-item active">Hobi</li>
             </ol>
           </div>
         </div>
@@ -36,35 +36,29 @@
           </div>
         </div>
         <div class="card-body">
-          <a href="{{url('matkul/create')}}" class="btn btn-sm btn-success my-2">Tambah Data</a>
-          <table class="table">
-            <tr>
-                <th>kode</th>
-                <th>nama</th>
-                <th>dosen</th>
-                <th>sks</th>
-            </tr>
-            @foreach ($mk as $kode => $m)
-            <tr>
-                <td>{{$kode}}</td>
-                <td>{{$m->nama}}</td>
-                <td>{{$m->dosen}}</td>
-                <td>{{$m->sks}}</td>
-                <td>
-                  <!-- Bikin tombol edit dan delete -->
-                  <a href="{{ url('/matkul/'. $m->id.'/edit') }}" class="btn btn-sm btn-warning">edit</a>
-                  <form method="POST" action="{{ url('/matkul/'.$m->id) }}" >
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-sm btn-danger">hapus</button>
-                  </form>
-
-                </td>
-            </tr>
-            @endforeach
-          </table>
-        </div>
-        <!-- /.card-body -->
+            <form method="POST" action="{{ $url_form}}">
+                @csrf
+                {!! (isset($hb))? method_field('PUT'): ''!!}
+                <div class="form-group">
+                    <label>Nama</label>
+                    <input class="form-control @error('nama') is-invalid @enderror" value="{{ isset($hb)? $hb->nama :old('nama') }}" name="nama" type="text"/>
+                    @error('nama')
+                        <span class="error invalid-feedback">{{$message}}</span>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label>hobi</label>
+                    <input class="form-control @error('hobi') is-invalid @enderror" value="{{ isset($hb)? $hb->hobi :old('hobi') }}" name="hobi" type="text"/>
+                    @error('hobi')
+                        <span class="error invalid-feedback">{{$message}}</span>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="submit">
+                </div>
+            </form>
+          </div>
+          <!-- /.card-body -->
         <div class="card-footer">
           Footer
         </div>

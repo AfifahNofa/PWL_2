@@ -34,7 +34,7 @@ class MahasiswaController extends Controller
     {
         //validasi
         $request->validate([
-            'nim' => 'required|string|max:10|unique:mahasiswa,nim'.$id,
+            'nim' => 'required|string|max:10|unique:mahasiswa,nim',
             'nama' => 'required|string|max:50',
             'jk' => 'required|in:l,p',
             'tempat_lahir' => 'required|string|max:50',
@@ -44,6 +44,7 @@ class MahasiswaController extends Controller
         ]);
 
         $data =MahasiswaModel::create($request->except(['_token']));
+        //jika data berhasil ditambahkan, akan kembali ke halaman utama
         return redirect('mahasiswa')
             ->with('success', 'Mahasiswa Berhasil Ditambahkan');
     }

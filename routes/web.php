@@ -106,5 +106,8 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
 
     Route::resource('/mahasiswa', MahasiswaController::class);
+    Route::resource('/matkul', MataKuliahModelController::class);
+    Route::resource('/hobi', HobiModelController::class);
+    Route::resource('/keluarga', KeluargaModelController::class);
 });
 
