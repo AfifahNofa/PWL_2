@@ -37,31 +37,41 @@
         </div>
         <div class="card-body">
           <a href="{{url('matkul/create')}}" class="btn btn-sm btn-success my-2">Tambah Data</a>
-          <table class="table">
-            <tr>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>id</th>
                 <th>kode</th>
                 <th>nama</th>
                 <th>dosen</th>
                 <th>sks</th>
-            </tr>
-            @foreach ($mk as $kode => $m)
-            <tr>
-                <td>{{$kode}}</td>
-                <td>{{$m->nama}}</td>
-                <td>{{$m->dosen}}</td>
-                <td>{{$m->sks}}</td>
-                <td>
-                  <!-- Bikin tombol edit dan delete -->
-                  <a href="{{ url('/matkul/'. $m->id.'/edit') }}" class="btn btn-sm btn-warning">edit</a>
-                  <form method="POST" action="{{ url('/matkul/'.$m->id) }}" >
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-sm btn-danger">hapus</button>
-                  </form>
-
-                </td>
-            </tr>
-            @endforeach
+                <th>action</th>
+              </tr>
+            </thead>
+            <tbody>
+              @if($mk->count() > 0)
+                @foreach ($mk as $mt => $m)
+                  <tr>
+                    <td>{{++$mt}}</td>
+                    <td>{{$m->kode}}</td>
+                    <td>{{$m->nama}}</td>
+                    <td>{{$m->dosen}}</td>
+                    <td>{{$m->sks}}</td>
+                    <td>
+                      <!-- Bikin tombol edit dan delete -->
+                      <a href="{{ url('/matkul/'. $m->id.'/edit') }}" class="btn btn-sm btn-warning">edit</a>
+                      <form method="POST" action="{{ url('/matkul/'.$m->id) }}" >
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-sm btn-danger">hapus</button>
+                      </form>
+                    </td>
+                  </tr>
+                @endforeach
+              @else
+                <tr><td colspan="6" class="text-center">Data tidak ada</td></tr>
+              @endif
+            </tbody>
           </table>
         </div>
         <!-- /.card-body -->

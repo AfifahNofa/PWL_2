@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('id', 3)->primary();
             $table->string('nama', 30);
             $table->string('hobi', 30);
+            $table->timestamps();
         });
     }
 

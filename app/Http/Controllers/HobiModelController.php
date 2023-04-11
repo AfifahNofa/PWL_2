@@ -12,23 +12,12 @@ class HobiModelController extends Controller
         return view('hobi')
                 ->with('hb', $hobi);
     }
- /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function create()
     {
         return view('hobi.create_hobi')
             ->with('url_form', url('/hobi'));
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //validasi
@@ -43,20 +32,18 @@ class HobiModelController extends Controller
             ->with('success', 'Hobi Berhasil Ditambahkan');
     }
 
-    public function show(HobiModel $mahasiswa)
+    public function show(HobiModel $hobi)
     {
         //
     }
    
     public function edit($id)
     {
-        $mahasiswa = HobiModel::find($id);
+        $hobi = HobiModel::find($id);
         return view('hobi.create_hobi')
-            ->with('mhs', $hobi)
+            ->with('hb', $hobi)
             ->with('url_form', url('/hobi/'. $id));
     }
-
-   
     public function update(Request $request, $id)
     {
             $request->validate([

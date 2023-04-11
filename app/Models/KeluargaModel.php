@@ -8,14 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class KeluargaModel extends Model
 {
     use HasFactory;
-
     protected $table = 'keluarga';
+    public $timestamps = false;
     // protected $primaryKey = 'id';
     // protected $keyType = 'string';
     protected $fillable = [
         'nama',
         'ttl',
         'status',
-        'agama',
+        'hobi',
     ];
 }
