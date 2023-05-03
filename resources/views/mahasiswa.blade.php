@@ -50,12 +50,13 @@
                   <th>Tanggal Lahir</th>
                   <th>Alamat</th>
                   <th>HP</th>
+                  <th>Kelas</th>
                   <th>Action</th>
                 </tr>
               </thead>
               <tbody>
                 @if($mhs->count() > 0)
-                  @foreach($mhs as $i => $m)
+                  @foreach( $mhs as $i => $m)
                     <tr>
                       <td>{{++$i}}</td>
                       <td>{{$m->nim}}</td>
@@ -65,9 +66,11 @@
                       <td>{{$m->tanggal_lahir}}</td>
                       <td>{{$m->alamat}}</td>
                       <td>{{$m->hp}}</td>
+                      <td>{{$m->kelas->nama_kelas}}</td>
                       <td>
                         <!-- Bikin tombol edit dan delete -->
-                        <a href="{{ url('/mahasiswa/'. $m->id.'/edit') }}" class="btn btn-sm btn-warning">edit</a>
+                        <a href="{{ url('/mahasiswa/'. $m->id.'/edit') }}" class="btn btn-sm btn-warning">edit</a><br>
+                        <a href="{{ url('/mahasiswa/'. $m->id.'/show') }}" class="btn btn-sm btn-warning">show</a>
                         <form method="POST" action="{{ url('/mahasiswa/'.$m->id) }}" >
                           @csrf
                           @method('DELETE')
