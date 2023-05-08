@@ -11,11 +11,15 @@ return new class extends Migration
      *
      * @return void
      */
+
     public function up()
     {
+        if (Schema::hasColumn('mahasiswa', 'kelas_id')){
+            Schema::dropColumns('mahasiswa', 'kelas_id');
+        }
         Schema::table('mahasiswa', function (Blueprint $table) {
             $table->unsignedBigInteger('kelas_id')->nullable(); //menambahkan kolom kelas_id
-            $table->foreign('kelas_id')->preferences('id')->on('kelas');//menambahkan foreign key di kolom kelas_id
+            $table->foreign('kelas_id')->references('id')->on('kelas');//menambahkan foreign key di kolom kelas_id
         });
     }
     /**

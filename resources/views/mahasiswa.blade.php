@@ -66,11 +66,14 @@
                       <td>{{$m->tanggal_lahir}}</td>
                       <td>{{$m->alamat}}</td>
                       <td>{{$m->hp}}</td>
-                      <td>{{$m->kelas->nama_kelas}}</td>
+                      {{-- <td>{{$m->kelas->nama_kelas}}</td> --}}
+                      <td>{{$m->kelas !== null ? $m->kelas->nama_kelas: 'none'}}</td>
                       <td>
                         <!-- Bikin tombol edit dan delete -->
-                        <a href="{{ url('/mahasiswa/'. $m->id.'/edit') }}" class="btn btn-sm btn-warning">edit</a><br>
-                        <a href="{{ url('/mahasiswa/'. $m->id.'/show') }}" class="btn btn-sm btn-warning">show</a>
+                        <a href="{{ route('mahasiswa.edit', [$m->id]) }}"
+                          class="btn btn-sm btn-warning">edit</a>
+                        <a href="{{ route('mahasiswa.show', [$m->id]) }}" 
+                          class="btn btn-sm btn-warning">show</a>
                         <form method="POST" action="{{ url('/mahasiswa/'.$m->id) }}" >
                           @csrf
                           @method('DELETE')

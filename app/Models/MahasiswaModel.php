@@ -10,7 +10,7 @@ class MahasiswaModel extends Model
 {
     use HasFactory;
     protected $table = 'mahasiswa';
-    protected $primaryKey = 'nim';
+    protected $primaryKey = 'id';
     // protected $keyType = 'int';
     protected $fillable = [
         'nim',

@@ -90,7 +90,7 @@
         <a href={{('/matkul')}} class="nav-link">
           <i class="nav-icon fas fa-tachometer-alt"></i>
           <p>
-            MataKuliah
+            MatKul
             {{-- <i class="right fas fa-angle-left"></i> --}}
           </p>
         </a>
@@ -101,6 +101,16 @@
           <i class="nav-icon fas fa-tachometer-alt"></i>
           <p>
             Mahasiswa
+            {{-- <i class="right fas fa-angle-left"></i> --}}
+          </p>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href={{('/matakuliah')}} class="nav-link">
+          <i class="nav-icon fas fa-tachometer-alt"></i>
+          <p>
+            MatKuliah
             {{-- <i class="right fas fa-angle-left"></i> --}}
           </p>
         </a>

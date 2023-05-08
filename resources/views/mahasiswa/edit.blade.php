@@ -89,13 +89,18 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                  <label for="Kelas">Kelas</label>
-                  <select class="form-control" name="kelas_id">
-                  @foreach ($kelas as $kls)
-                    <option value="{{$kls->id}}">{{$kls->nama_kelas}}</option>
-                  @endforeach
-                </select>
-              </div>
+                    <label for="Kelas">Kelas</label>
+                    <select class="form-control" name="kelas">
+                        @foreach ($kelas as $kls)
+                            <option value="{{ $kls->id }}"
+                                @isset($mhs)
+                                 {{ $mhs->kelas_id == $kls->id ? 'selected' : '' }}
+                                @endisset>
+                                {{ $kls->nama_kelas }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
                 <div class="form-group">
                     <input type="submit" value="submit">
                 </div>
