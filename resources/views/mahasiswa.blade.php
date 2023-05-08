@@ -36,7 +36,7 @@
           </div>
         </div>
         <div class="card-body">
-
+          <h3 class="text-center"><strong>Jurusan Teknologi Informasi Politeknik Negeri Malang</strong></h3>
             <a href="{{url('mahasiswa/create')}}" class="btn btn-sm btn-success my-2">Tambah Data</a>
   
             <table class="table table-bordered table-striped">
@@ -70,16 +70,16 @@
                       <td>{{$m->kelas !== null ? $m->kelas->nama_kelas: 'none'}}</td>
                       <td>
                         <!-- Bikin tombol edit dan delete -->
-                        <a href="{{ route('mahasiswa.edit', [$m->id]) }}"
-                          class="btn btn-sm btn-warning">edit</a>
-                        <a href="{{ route('mahasiswa.show', [$m->id]) }}" 
-                          class="btn btn-sm btn-warning">show</a>
+                        <a href="{{ route('mahasiswa.edit', [$m->id]) }}"class="btn btn-sm btn-warning">edit</a>
+
+                        <a href="{{ route('mahasiswa.show', [$m->id]) }}" class="btn btn-sm btn-primary">show</a>
+                        <a href="{{ route('mahasiswa.nilai.show', [$m->id]) }}" class="btn btn-sm btn-success">nilai</a>
+
                         <form method="POST" action="{{ url('/mahasiswa/'.$m->id) }}" >
                           @csrf
                           @method('DELETE')
                           <button type="submit" class="btn btn-sm btn-danger">hapus</button>
                         </form>
-
                       </td>
                     </tr>
                   @endforeach

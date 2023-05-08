@@ -82,6 +82,8 @@ class MahasiswaController extends Controller
         return view('mahasiswa.detail', ['mahasiswa'=> $mahasiswa]);
     }
 
+    
+
     /**
      * Show the form for editing the specified resource.
      *
