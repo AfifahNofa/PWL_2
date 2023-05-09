@@ -73,7 +73,7 @@
                         <a href="{{ route('mahasiswa.edit', [$m->id]) }}"class="btn btn-sm btn-warning">edit</a>
 
                         <a href="{{ route('mahasiswa.show', [$m->id]) }}" class="btn btn-sm btn-primary">show</a>
-                        <a href="{{ route('mahasiswa.nilai.show', [$m->id]) }}" class="btn btn-sm btn-success">nilai</a>
+                        <a href="{{ route('mahasiswamatakuliah.show', [$m->id]) }}" class="btn btn-sm btn-success">nilai</a>
 
                         <form method="POST" action="{{ url('/mahasiswa/'.$m->id) }}" >
                           @csrf

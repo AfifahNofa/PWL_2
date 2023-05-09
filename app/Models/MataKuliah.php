@@ -19,7 +19,7 @@ class MataKuliah extends Model
         'jam',
         'semester',
     ];
-
+    
     public function mahasiswa_matakuliah(){
         return $this->hasMany(MahasiswaMatakuliah::class, 'matakuliah_id', 'id');
     }

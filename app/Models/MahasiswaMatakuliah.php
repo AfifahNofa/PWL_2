@@ -9,8 +9,10 @@ class MahasiswaMatakuliah extends Model
 {
     use HasFactory;
 
-    protected $table='matakuliah'; //mendefinisikan bahwa model ini terkait dengan tabel kelas
+protected $table='mahasiswa_matakuliah'; //mendefinisikan bahwa model ini terkait dengan tabel kelas
     protected $fillable =[
+        'mahasiswa_id',
+        'matakuliah_id', 
         'nilai',
     ];
     public function mahasiswa(){

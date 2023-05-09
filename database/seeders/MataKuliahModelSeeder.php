@@ -70,6 +70,6 @@ class MataKuliahModelSeeder extends Seeder
                 'dosen' => 'Moch Zawaruddin Abdulah, S.ST., M.Kom',
                 'sks' => '3',
             ]
-            ]);
+           
     }
 }

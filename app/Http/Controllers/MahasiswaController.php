@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\MahasiswaModel;
 use Illuminate\Http\Request;
 use App\Models\kelas;
+use App\Models\MahasiswaMatakuliah;
 
 class MahasiswaController extends Controller
 {
@@ -83,7 +84,6 @@ class MahasiswaController extends Controller
     }
 
     
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -100,7 +100,7 @@ class MahasiswaController extends Controller
                     ->with('kelas', $kelas)
                     ->with('url_form', url('/mahasiswa/'. $id));
     }
-
+    
     /**
      * Update the specified resource in storage.
      *

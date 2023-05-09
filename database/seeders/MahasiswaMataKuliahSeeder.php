@@ -15,7 +15,7 @@ class MahasiswaMataKuliahSeeder extends Seeder
      */
     public function run()
     {
-        $mahasiswamatkul =
+        DB::table('mahasiswa_matakuliah')->insert(
         [
             [
                 'mahasiswa_id' => 1,
@@ -38,12 +38,10 @@ class MahasiswaMataKuliahSeeder extends Seeder
                 'nilai' => 'A',
             ],
             [
-                'mahasiswa_id' => 3,
+                'mahasiswa_id' => 4,
                 'matakuliah_id' => 1,
                 'nilai' => 'A',
             ],
-        ];
-
-        DB::table('mahasiswa_matakuliah')->insert($mahasiswamatkul);
+        ]);
     }
 }
