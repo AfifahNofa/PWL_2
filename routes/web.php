@@ -115,5 +115,7 @@ Route::middleware(['auth'])->group(function(){
     Route::resource('/hobi', HobiModelController::class);
     Route::resource('/keluarga', KeluargaModelController::class);
     Route::resource('/articles', ArticleController::class);
+    Route::get('/article/cetak_pdf', [ArticleController::class, 'cetak_pdf']);
+
 });
 
