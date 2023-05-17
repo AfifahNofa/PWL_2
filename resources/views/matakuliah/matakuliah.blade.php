@@ -36,6 +36,7 @@
           </div>
         </div>
         <div class="card-body">
+          <h3 class="text-center"><strong>Jurusan Teknologi Informasi Politeknik Negeri Malang</strong></h3>
           <a href="{{url('matakuliah/create')}}" class="btn btn-sm btn-success my-2">Tambah Data</a>
           <table class="table table-bordered table-striped">
             <thead>

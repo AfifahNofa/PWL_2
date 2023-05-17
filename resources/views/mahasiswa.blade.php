@@ -70,16 +70,19 @@
                       <td>{{$m->kelas !== null ? $m->kelas->nama_kelas: 'none'}}</td>
                       <td>
                         <!-- Bikin tombol edit dan delete -->
-                        <a href="{{ route('mahasiswa.edit', [$m->id]) }}"class="btn btn-sm btn-warning">edit</a>
-
-                        <a href="{{ route('mahasiswa.show', [$m->id]) }}" class="btn btn-sm btn-primary">show</a>
-                        <a href="{{ route('mahasiswamatakuliah.show', [$m->id]) }}" class="btn btn-sm btn-success">nilai</a>
-
-                        <form method="POST" action="{{ url('/mahasiswa/'.$m->id) }}" >
-                          @csrf
-                          @method('DELETE')
-                          <button type="submit" class="btn btn-sm btn-danger">hapus</button>
-                        </form>
+                        <div class="btn-group">
+                          <a href="{{ route('mahasiswa.edit', [$m->id]) }}"
+                              class="btn btn-sm btn-warning mr-2">edit</a>
+                          <a href="{{ route('mahasiswa.show', [$m->id]) }}"
+                              class="btn btn-sm btn-primary mr-2">show</a>
+                          <a href="{{ route('mahasiswamatakuliah.show', [$m->id]) }}"
+                              class="btn btn-sm btn-success mr-2">nilai</a>
+                          <form method="POST" action="{{ url('/mahasiswa/' . $m->id) }}">
+                              @csrf
+                              @method('DELETE')
+                              <button type="submit" class="btn btn-sm btn-danger mr-2">DELETE</button>
+                          </form>
+                      </div>
                       </td>
                     </tr>
                   @endforeach

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\ArtikelModelController;
 use App\Http\Controllers\Auth\LoginController;
@@ -113,5 +114,6 @@ Route::middleware(['auth'])->group(function(){
     Route::resource('/matakuliah', MataKuliahController::class);
     Route::resource('/hobi', HobiModelController::class);
     Route::resource('/keluarga', KeluargaModelController::class);
+    Route::resource('/articles', ArticleController::class);
 });
 

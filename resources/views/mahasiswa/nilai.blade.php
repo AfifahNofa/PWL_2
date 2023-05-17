@@ -8,12 +8,12 @@
 
             <!-- Default box -->
             <div class="card">
-                <div class="col-sm-12 text-center">
-                    <h3>JURUSAN TEKNOLOGI INFORMASI - POLITEKNIK NEGERI MALANG</h3>
+                <div class="col-sm-12 text-center"><br>
+                    <h2 ><strong>JURUSAN TEKNOLOGI INFORMASI - POLITEKNIK NEGERI MALANG</strong></h2>
                     <BR>
-                    <h2>KARTU HASIL STUDI (KHS)</h2>
+                    <h3 ><strong>KARTU HASIL STUDI (KHS)</strong></h3>
                 </div>
-                <br> <br>
+                <br>
                 <div class="card-header">
                     <div class="card-title">
                         <div> Nama : {{ $mhs->nama }} </div>
@@ -59,7 +59,9 @@
                             @endif
                         </tbody>
                     </table>
+                    <div class="card-body">
                     <a class="btn btn-success mt3" href="{{ route('mahasiswa.index') }}">Kembali</a>
+                    </div>
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
