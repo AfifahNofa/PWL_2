@@ -24,7 +24,7 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">kelas : TI-2A</h3>
+          <h3 class="card-title">TI-2A/03</h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -36,7 +36,7 @@
           </div>
         </div>
         <div class="card-body">
-          <h3 class="text-center"><strong>Jurusan Teknologi Informasi Politeknik Negeri Malang</strong></h3>
+          <h3 class="text-center"><strong>Mata Kuliah Kelas TI 2A</strong></h3>
           <a href="{{url('matakuliah/create')}}" class="btn btn-sm btn-success my-2">Tambah Data</a>
           <table class="table table-bordered table-striped">
             <thead>
@@ -60,15 +60,14 @@
                     <td>{{$mtkl->semester}}</td>
                     <td>
                       <!-- Bikin tombol edit dan delete -->
-                      <div class="card-body">
-                        <a href="{{ route('matakuliah.edit', [$mtkl->id]) }}"class="btn btn-sm btn-warning">edit</a>
-                        <a href="{{ route('matakuliah.show', [$mtkl->id]) }}" class="btn btn-sm btn-primary">show</a>
+                      <div class="btn-group">
+                        <a href="{{ route('matakuliah.edit', [$mtkl->id]) }}"class="btn btn-sm btn-warning mr-2">edit</a>
+                        <a href="{{ route('matakuliah.show', [$mtkl->id]) }}" class="btn btn-sm btn-primary mr-2">show</a>
                         <form method="POST" action="{{ url('/matakuliah/'.$mtkl->id) }}" >
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-sm btn-danger">hapus</button>
+                        <button type="submit" class="btn btn-sm btn-danger mr-2">hapus</button>
                         </form>
-                    </div>
                     </td>
                   </tr>
                 @endforeach
@@ -80,7 +79,7 @@
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-          Footer
+          2141720103-Afifah Nofa Kurnia Rahmadani
         </div>
         <!-- /.card-footer-->
       </div>

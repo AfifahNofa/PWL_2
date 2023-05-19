@@ -6,7 +6,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Blank Page</h1>
+            <h1>Dashboard</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -24,7 +24,7 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Halo</h3>
+          <h3 class="card-title">TI-2A/03</h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -36,11 +36,11 @@
           </div>
         </div>
         <div class="card-body">
-          Selamat Datang
+           <h1>Selamat Datang di Halaman Admin</h1>
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-          Afifah Nofa Kurnia Rahmadani
+          2141720103-Afifah Nofa Kurnia Rahmadani
         </div>
         <!-- /.card-footer-->
       </div>

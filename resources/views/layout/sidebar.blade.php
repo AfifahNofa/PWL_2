@@ -2,12 +2,13 @@
   <!-- Sidebar user (optional) -->
   <div class="user-panel mt-3 pb-3 mb-3 d-flex">
     <div class="image">
-      <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+      <img src="{{asset('assets/afifah.jpeg')}}" class="img-circle elevation-2" alt="User Image">
     </div>
     <div class="info">
-      <a href="#" class="d-block">Afifah Nofa Kurnia Rahmadani</a>
+      <a href="#" class="d-block">Afifah Nofa Kurnia R.</a>
     </div>
   </div>
+
 
   <!-- SidebarSearch Form -->
   <div class="form-inline">
@@ -38,7 +39,7 @@
 
        <li class="nav-item">
         <a href={{route('profile')}} class="nav-link">
-          <i class="nav-icon fas fa-tachometer-alt"></i>
+          <i class="far fa-circle nav-icon"></i>
           <p>
             Profile
             {{-- <i class="right fas fa-angle-left"></i> --}}
@@ -48,7 +49,7 @@
 
        <li class="nav-item">
         <a href={{route('pengalaman')}} class="nav-link">
-          <i class="nav-icon fas fa-tachometer-alt"></i>
+          <i class="nav-icon fas fa-th"></i>
           <p>
             Pengalaman
             {{-- <i class="right fas fa-angle-left"></i> --}}
@@ -58,7 +59,7 @@
 
        <li class="nav-item">
         <a href={{route('artikel')}} class="nav-link">
-          <i class="nav-icon fas fa-tachometer-alt"></i>
+          <i class="nav-icon fas fa-copy"></i>
           <p>
             Artikel
             {{-- <i class="right fas fa-angle-left"></i> --}}
@@ -68,7 +69,7 @@
 
        <li class="nav-item">
         <a href={{('/hobi')}} class="nav-link">
-          <i class="nav-icon fas fa-tachometer-alt"></i>
+          <i class="nav-icon fas fa-chart-pie"></i>
           <p>
             Hobi
             {{-- <i class="right fas fa-angle-left"></i> --}}
@@ -78,7 +79,7 @@
 
        <li class="nav-item">
         <a href={{('/keluarga')}} class="nav-link">
-          <i class="nav-icon fas fa-tachometer-alt"></i>
+          <i class="nav-icon fas fa-tree"></i>
           <p>
             Keluarga
             {{-- <i class="right fas fa-angle-left"></i> --}}
@@ -88,7 +89,7 @@
 
       <li class="nav-item">
         <a href={{('/matkul')}} class="nav-link">
-          <i class="nav-icon fas fa-tachometer-alt"></i>
+          <i class="nav-icon fas fa-edit"></i>
           <p>
             MatKul
             {{-- <i class="right fas fa-angle-left"></i> --}}
@@ -98,7 +99,7 @@
 
       <li class="nav-item">
         <a href={{('/mahasiswa')}} class="nav-link">
-          <i class="nav-icon fas fa-tachometer-alt"></i>
+          <i class="nav-icon fas fa-table"></i>
           <p>
             Mahasiswa
             {{-- <i class="right fas fa-angle-left"></i> --}}
@@ -108,7 +109,7 @@
 
       <li class="nav-item">
         <a href={{('/matakuliah')}} class="nav-link">
-          <i class="nav-icon fas fa-tachometer-alt"></i>
+          <i class="nav-icon fas fa-book"></i>
           <p>
             MataKuliah
             {{-- <i class="right fas fa-angle-left"></i> --}}

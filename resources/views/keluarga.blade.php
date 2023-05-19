@@ -24,7 +24,7 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Kelas : TI-2A</h3>
+          <h3 class="card-title">TI-2A/03</h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -59,12 +59,14 @@
                     <td>{{$f->hobi}}</td>
                     <td>
                       <!-- Bikin tombol edit dan delete -->
-                      <a href="{{ url('/keluarga/'. $f->id.'/edit') }}" class="btn btn-sm btn-warning">edit</a>
-                      <form method="POST" action="{{ url('/keluarga/'.$f->id) }}" >
+                      <div class="btn-group">
+                        <a href="{{ url('/keluarga/'. $f->id.'/edit') }}" class="btn btn-sm btn-warning mr-2">edit</a>
+                        <form method="POST" action="{{ url('/keluarga/'.$f->id) }}" >
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-sm btn-danger">hapus</button>
-                      </form>
+                        <button type="submit" class="btn btn-sm btn-danger mr-2">hapus</button>
+                        </form>
+                      </div>
                     </td>
                   </tr>
                 @endforeach
@@ -77,7 +79,7 @@
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-          Footer
+          2141720103-Afifah Nofa Kurnia Rahmadani
         </div>
         <!-- /.card-footer-->
       </div>

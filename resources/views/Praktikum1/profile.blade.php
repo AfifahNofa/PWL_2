@@ -24,7 +24,7 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Profile</h3>
+          <h3 class="card-title">TI-2A/03</h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -35,17 +35,22 @@
             </button>
           </div>
         </div>
-        <div class="card-body">
-    Profile Mahasiswa: <br>
-          Nama    : Afifah Nofa Kurnia Rahmadani<br>
-          TTL     : Jayapura, 07 November 2002<br>
-          Prodi   : D-IV Teknik Informatika<br>
-          Jurusan : Teknologi Informasi<br>
-          Alamat  : Malang<br>
-        </div>
+
+          <div class="card-body">
+              <ul class="list-group list-group-flush">
+                  <li class="list-group-item"></b> Nama    :</b> Afifah Nofa Kurnia Rahmadani</li>
+                  <li class="list-group-item"></b> TTL     :</b> Jayapura, 07 November 2002</li>
+                  <li class="list-group-item"></b> Prodi   : </b> D-IV Teknik Informatika</li>
+                  <li class="list-group-item"></b> Jurusan : </b> Teknologi Informasi</li>
+                  <li class="list-group-item"></b> Alamat  : </b> Malang</li>
+                  <li class="list-group-item"></b> No.Hp   :</b> 085868961706</li>
+                  <li class="list-group-item"></b> Agama  : </b> islam</li>
+          
+              </ul>
+          </div>
         <!-- /.card-body -->
         <div class="card-footer">
-          Afifah Nofa Kurnia Rahmadani
+          2141720103-Afifah Nofa Kurnia Rahmadani
         </div>
         <!-- /.card-footer-->
       </div>
