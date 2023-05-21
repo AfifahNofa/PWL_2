@@ -168,5 +168,13 @@ class MahasiswaController extends Controller
         return redirect('mahasiswa')
         ->with('success', 'Mahasiswa Berhasil Dihapus');
     }
+
+    public function cetak_pdf($id){
+        $mhs = MahasiswaModel::find($id);
+        $mahasiswamatakuliah = MahasiswaMatakuliah::with('mahasiswa', 'matakuliah')->where('mahasiswa_id',  $id)->get();
+
+        $pdf = PDF::loadview('mahasiswa.nilai_pdf',['mhs'=>$mhs, 'mm'=>$mahasiswamatakuliah]);
+        return $pdf->stream();
+    }
 }
 
