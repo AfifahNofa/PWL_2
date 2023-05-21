@@ -6,6 +6,8 @@ use App\Models\MahasiswaModel;
 use Illuminate\Http\Request;
 use App\Models\kelas;
 use App\Models\MahasiswaMatakuliah;
+use Illuminate\Support\Facades\Storage;
+use PDF;
 
 class MahasiswaController extends Controller
 {
@@ -47,7 +49,13 @@ class MahasiswaController extends Controller
             'alamat' => 'required|string|max:255',
             'hp' => 'required|digits_between:6,15',
             'kelas_id' => 'required',]);
-
+        // Menyimpan foto jika ada
+        $foto_name = null;
+        if ($request->file('image')) {
+            $foto = $request->file('image');
+            $foto_name = time() . '_' . $foto->getClientOriginalName();
+            $foto_name = $request->file('image')->store('images', 'public');
+        }
         $mahasiswa = new MahasiswaModel;
         $mahasiswa->nim = $request->get('nim');
         $mahasiswa->nama = $request->get('nama');
@@ -56,15 +64,14 @@ class MahasiswaController extends Controller
         $mahasiswa->tanggal_lahir = $request->get('tanggal_lahir');
         $mahasiswa->alamat = $request->get('alamat');
         $mahasiswa->hp = $request->get('hp');
+        $mahasiswa->foto = $foto_name;
         $mahasiswa->save();
 
         $kelas = new kelas;
         $kelas->id = $request->get('kelas_id');
-
         //fungsi eloquent untk menambah data dengan relasi belongsTo
         $mahasiswa->kelas()->associate($kelas);
         $mahasiswa->save();
-        
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
         return redirect('mahasiswa')
             ->with('success', 'Mahasiswa Berhasil Ditambahkan');
@@ -119,7 +126,6 @@ class MahasiswaController extends Controller
                 'alamat' => 'required|string|max:255',
                 'hp' => 'required|digits_between:6,15',
             ]);
-            
             $mahasiswa = MahasiswaModel::with('kelas')->where('id', $id)->first();
             $mahasiswa->nim = $request->get('nim');
             $mahasiswa->nama = $request->get('nama');
@@ -128,6 +134,13 @@ class MahasiswaController extends Controller
             $mahasiswa->tanggal_lahir = $request->get('tanggal_lahir');
             $mahasiswa->alamat = $request->get('alamat');
             $mahasiswa->hp = $request->get('hp');
+            $foto_name = null;
+            if ($mahasiswa->foto && file_exists(storage_path('app/public/'.$mahasiswa->foto))) {
+            Storage::delete('public/'. $mahasiswa->foto);
+            }
+            $foto_name = $request->file('image')->store('images', 'public');
+            $mahasiswa->foto = $foto_name;
+            
             $mahasiswa->save();
 
             $kelas = new kelas;
@@ -156,7 +169,4 @@ class MahasiswaController extends Controller
         ->with('success', 'Mahasiswa Berhasil Dihapus');
     }
 }
-
-
-
 

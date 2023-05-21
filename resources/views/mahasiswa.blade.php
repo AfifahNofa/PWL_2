@@ -37,14 +37,35 @@
         </div>
         <div class="card-body">
           <h3 class="text-center"><strong>Jurusan Teknologi Informasi Politeknik Negeri Malang</strong></h3>
+          @if ($message = Session::get('success'))
+          <div class="alert alert-success">
+          <p>{{ $message }}</p>
+          </div>
+         @endif
+          <!-- SidebarSearch Form -->
+          <div class="float-left my-2">
+            <div class="form-inline">
+              <form action="/mahasiswa" method="GET" class="input-group">
+                  <input class="form-control form-control-sidebar" type="search" name="search"
+                      placeholder="Search" aria-label="Search">
+                  <div class="input-group-append">
+                      <button class="btn btn-sidebar" type="submit">
+                          <i class="fas fa-search fa-fw"></i>
+                      </button>
+                  </div>
+              </form>
+            </div>
+          </div>
+          <div class="float-right my-2">
             <a href="{{url('mahasiswa/create')}}" class="btn btn-sm btn-success my-2">Tambah Data</a>
-  
+          </div>
             <table class="table table-bordered table-striped">
               <thead>
                 <tr>
                   <th>No</th>
                   <th>NIM</th>
                   <th>Nama</th>
+                  <th>Foto</th>
                   <th>Jenis Kelamin</th>
                   <th>Tempat lahir</th>
                   <th>Tanggal Lahir</th>
@@ -61,6 +82,11 @@
                       <td>{{++$i}}</td>
                       <td>{{$m->nim}}</td>
                       <td>{{$m->nama}}</td>
+                      <td>
+                        @if ($m->foto)
+                          <img style="max-width:100px;max-height:100px" src="{{url('storage').'/'.$m->foto}}" />
+                        @endif
+                      </td>
                       <td>{{$m->jk}}</td>
                       <td>{{$m->tempat_lahir}}</td>
                       <td>{{$m->tanggal_lahir}}</td>
