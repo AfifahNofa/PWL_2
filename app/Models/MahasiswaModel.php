@@ -13,6 +13,7 @@ class MahasiswaModel extends Model
     protected $primaryKey = 'id';
     // protected $keyType = 'int';
     protected $fillable = [
+ 
         'nim',
         'nama',
         'foto',
@@ -21,7 +22,7 @@ class MahasiswaModel extends Model
         'tanggal_lahir',
         'alamat',
         'hp',
-        'kelas_id',
+        // 'kelas_id',
     ];
 
     public function kelas(){

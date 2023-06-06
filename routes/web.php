@@ -109,6 +109,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
 
     Route::resource('/mahasiswa', MahasiswaController::class);
+    Route::post('/mahasiswa/data', [MahasiswaController::class, 'data']);
     Route::resource('/mahasiswamatakuliah', MahasiswaMatakuliahController::class);
     Route::resource('/matkul', MataKuliahModelController::class);
     Route::resource('/matakuliah', MataKuliahController::class);
@@ -116,6 +117,6 @@ Route::middleware(['auth'])->group(function(){
     Route::resource('/keluarga', KeluargaModelController::class);
     Route::resource('/articles', ArticleController::class);
     Route::get('/article/cetak_pdf', [ArticleController::class, 'cetak_pdf']);
-    Route::get('/nilai_pdf/{id}', [MahasiswaController::class, 'cetak_pdf'])->name('cetak');
+    
 });
 
