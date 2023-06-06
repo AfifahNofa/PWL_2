@@ -54,7 +54,6 @@
                   <th>No</th>
                   <th>NIM</th>
                   <th>Nama</th>
-                  <th>Foto</th>
                   <th>Jenis Kelamin</th>
                   <th>Tempat lahir</th>
                   <th>Tanggal Lahir</th>
